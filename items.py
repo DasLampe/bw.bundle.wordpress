@@ -36,6 +36,8 @@ files = {
     '{}/wordpress/wp-config.php'.format(wordpress.get('root', defaultRoot)): {
         'source': 'wp-config.php',
         'content_type': 'mako',
+        'owner': 'www-data',
+        'group': 'www-data',
         'context': {
             'mysql_user': node.metadata.get('wordpress', {}).get('db', {}) \
                 .get('user', 'wordpress'),
