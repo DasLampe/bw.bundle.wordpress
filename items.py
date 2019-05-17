@@ -25,7 +25,7 @@ actions = {
         'command': 'cd {} && ' \
                    'tar xfvz wp.tar.gz'.format(
                         wordpress.get('root', defaultRoot)),
-        'unless': 'test -d {}/wordpress',
+        'unless': 'test -d {}/wordpress'.format(wordpress.get('root', defaultRoot)),
         'needs': [
             'download:{}/wp.tar.gz'.format(wordpress.get('root', defaultRoot)),
         ],
